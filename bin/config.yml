@@ -1,0 +1,19 @@
+app:
+  addr: ":3000"
+  root: ""
+log_conf:
+  log_path: "log"
+  log_file_name: "antiNCP.log"
+mysql:
+  addr: "localhost:3306"
+  db: "antincp"
+  username: "fly"
+  password: "123456"
+redis:
+  addr: "localhost:6379"
+  db: 0
+  username: "fly"
+  password: ""
+jwt:
+  secret: "secret"
+debug: true
