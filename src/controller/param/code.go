@@ -1,13 +1,15 @@
 package param
 
 type Submission struct {
-	VaccineStage  int `db:"vaccine_stage"`
-	Health        int `db:"health"`
-	TravelHistory int `db:"travel_history"`
-	HealthCode    int `db:"health_code"`
-	TravelCode    int `db:"travel_code"`
-	SubmitTime    int `db:"submit_time"`
-	Accepted      int `db:"accepted"`
+	Id            string `db:"id"`
+	I             int    `db:"i"`
+	VaccineStage  int    `db:"vaccine_stage"`
+	Health        int    `db:"health"`
+	TravelHistory int    `db:"travel_history"`
+	HealthCode    int    `db:"health_code"`
+	TravelCode    int    `db:"travel_code"`
+	SubmitTime    int    `db:"submit_time"`
+	Accepted      int    `db:"accepted"`
 }
 type Code struct {
 	Status     int `db:"status"`

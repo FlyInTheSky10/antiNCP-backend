@@ -15,7 +15,7 @@ func AddSubmission(sbm param.ReqUserSubmitCode, id string) error {
 		sbm.TravelHistory,
 		sbm.HealthCode,
 		sbm.TravelCode,
-		-1,
+		0,
 		time.Now().Unix(),
 	)
 	if err != nil {
@@ -25,7 +25,7 @@ func AddSubmission(sbm param.ReqUserSubmitCode, id string) error {
 }
 func GetSubmissionById(id string) ([]param.Submission, error) {
 	submissions := make([]param.Submission, 0)
-	err := Db.Select(&submissions, fmt.Sprintf("SELECT vaccine_stage,health,travel_history,health_code,travel_code,submit_time,accepted FROM submission WHERE id=%s", id))
+	err := Db.Select(&submissions, fmt.Sprintf("SELECT id,i,vaccine_stage,health,travel_history,health_code,travel_code,submit_time,accepted FROM submission WHERE id=%s", id))
 	if err != nil {
 		return []param.Submission{}, err
 	}
@@ -33,7 +33,7 @@ func GetSubmissionById(id string) ([]param.Submission, error) {
 }
 func GetSubmissions() ([]param.Submission, error) {
 	submissions := make([]param.Submission, 0)
-	err := Db.Select(&submissions, "SELECT vaccine_stage,health,travel_history,health_code,travel_code,submit_time,accepted FROM submission")
+	err := Db.Select(&submissions, "SELECT id,i,vaccine_stage,health,travel_history,health_code,travel_code,submit_time,accepted FROM submission")
 	if err != nil {
 		return []param.Submission{}, err
 	}

@@ -1,6 +1,6 @@
 app:
   addr: ":3000"
-  root: ""
+  root: "/api/v1"
 log_conf:
   log_path: "log"
   log_file_name: "antiNCP.log"
