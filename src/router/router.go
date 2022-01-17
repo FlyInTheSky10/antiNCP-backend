@@ -7,4 +7,6 @@ func InitRouter(g *echo.Group) {
 	InitUserRouter(rUser)
 	rCode := g.Group("/code")
 	InitCodeRouter(rCode)
+	rFile := g.Group("/upload")
+	InitFileRouter(rFile)
 }
