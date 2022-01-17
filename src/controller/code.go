@@ -32,13 +32,21 @@ func UserSubmitCode(ctx echo.Context) error {
 	return response.Success(ctx, "successfully submitted")
 }
 func UserViewSubmission(ctx echo.Context) error {
+	req := param.ReqGetSubmission{}
+	if err := ctx.Bind(&req); err != nil {
+		return response.Error(ctx, http.StatusBadRequest, "bad request", err)
+	}
+	if err := ctx.Validate(req); err != nil {
+		return response.Error(ctx, http.StatusBadRequest, "bad request", err)
+	}
+
 	id := util.GetIdFromJWT(ctx)
 	if id == "" {
 		return flyErr.Error{Text: "invalid token"}
 	}
 
 	submissions := make([]param.Submission, 0)
-	submissions, err := model.GetSubmissionById(id)
+	submissions, err := model.GetSubmissionById(id, req.StartIndex, 10)
 	if err != nil {
 		return response.Error(ctx, http.StatusInternalServerError, "failed to view submission", err)
 	}
@@ -59,6 +67,14 @@ func UserGetStatus(ctx echo.Context) error {
 	return response.Success(ctx, code)
 }
 func AdminGetSubmission(ctx echo.Context) error {
+	req := param.ReqGetSubmission{}
+	if err := ctx.Bind(&req); err != nil {
+		return response.Error(ctx, http.StatusBadRequest, "bad request", err)
+	}
+	if err := ctx.Validate(req); err != nil {
+		return response.Error(ctx, http.StatusBadRequest, "bad request", err)
+	}
+
 	id := util.GetIdFromJWT(ctx)
 	if id == "" {
 		return flyErr.Error{Text: "invalid token"}
@@ -76,7 +92,7 @@ func AdminGetSubmission(ctx echo.Context) error {
 		return response.Error(ctx, http.StatusForbidden, "permission denied", err)
 	}
 
-	submissions, err := model.GetSubmissions()
+	submissions, err := model.GetSubmissions(req.StartIndex, 10)
 	if err != nil {
 		return response.Error(ctx, http.StatusInternalServerError, "failed to get submissions", err)
 	}

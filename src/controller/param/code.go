@@ -26,6 +26,9 @@ type ReqUserSubmitCode struct {
 	HealthCode    int `query:"health_code"`
 	TravelCode    int `query:"travel_code"`
 }
+type ReqGetSubmission struct {
+	StartIndex int `query:"startIndex"`
+}
 type ReqAdminVerifyCode struct {
 	I      int `query:"i"`
 	Status int `query:"status"`

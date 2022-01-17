@@ -123,10 +123,6 @@ func UserRegister(ctx echo.Context) error {
 	if err != nil {
 		return response.Error(ctx, http.StatusInternalServerError, "failed to add user", err)
 	}
-	err = model.AddStatus(req.Id)
-	if err != nil {
-		return response.Error(ctx, http.StatusInternalServerError, "failed to add user", err)
-	}
 
 	return response.Success(ctx, "successfully add user")
 }

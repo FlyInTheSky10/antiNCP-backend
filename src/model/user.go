@@ -26,7 +26,8 @@ func GetUserByID(id string) (param.User, bool, error) {
 	return user[0], true, nil
 }
 func AddUser(user param.ReqUserRegister) error {
-	_, err := Db.Exec(
+	tx := Db.MustBegin()
+	tx.MustExec(
 		"INSERT INTO user(id, password, name, academy, id_number, phone_number, admin)values(?, ?, ?, ?, ?, ?, ?)",
 		user.Id,
 		user.Password,
@@ -36,6 +37,11 @@ func AddUser(user param.ReqUserRegister) error {
 		user.PhoneNumber,
 		0,
 	)
+	tx.MustExec(
+		"INSERT INTO code(id, status, verify_id, verify_time)values(?, ?, ?, ?)",
+		user.Id, 0, "", 0,
+	)
+	err := tx.Commit()
 	if err != nil {
 		return err
 	}

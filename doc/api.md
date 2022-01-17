@@ -164,9 +164,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3O
 
 响应：无
 
-### *用户查看所有申请 GET /code/viewSubmission
+### *用户查看所有申请 GET /code/viewSubmission?startIndex={index}
 
-请求：无
+返回 index [index, index + 10] 从0开始
 
 响应：
 
@@ -201,9 +201,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3O
 }
 ```
 
-### *Admin查看所有提交
+### *Admin查看所有提交 GET /code/allSubmission?startIndex={index}
 
-(需要是Admin) 请求：无
+(需要是Admin) 返回 index [index, index + 10] 从0开始
 
 响应：
 
