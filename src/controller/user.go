@@ -4,6 +4,7 @@ import (
 	"antiNCP/controller/param"
 	"antiNCP/model"
 	"antiNCP/util"
+	"antiNCP/util/flyErr"
 	"antiNCP/util/response"
 	"crypto/rand"
 	"crypto/rsa"
@@ -125,4 +126,21 @@ func UserRegister(ctx echo.Context) error {
 	}
 
 	return response.Success(ctx, "successfully add user")
+}
+func UserGetInfo(ctx echo.Context) error {
+	id := util.GetIdFromJWT(ctx)
+	if id == "" {
+		return flyErr.Error{Text: "invalid token"}
+	}
+
+	user, found, err := model.GetUserByID(id)
+	if err != nil {
+		return response.Error(ctx, http.StatusInternalServerError, "failed to find user", err)
+	}
+	if !found {
+		return response.Error(ctx, http.StatusInternalServerError, "cannot find user", err)
+	}
+
+	user.Password = ""
+	return response.Success(ctx, user)
 }

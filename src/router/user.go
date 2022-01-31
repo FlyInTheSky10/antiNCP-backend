@@ -12,4 +12,5 @@ func InitUserRouter(g *echo.Group) {
 	g.PUT("/register", controller.UserRegister)
 
 	g.GET("/status", controller.UserGetStatus, middleware.JWTMiddleware())
+	g.GET("/", controller.UserGetInfo, middleware.JWTMiddleware())
 }
