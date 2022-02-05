@@ -146,6 +146,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3O
 }
 ```
 
+### *获取用户 GET /user/
+
+请求：无
+
+响应：
+
+```json
+{
+  data: { Name:xxx, Id:xxx, Academy:xxx, IdNumber:xxx, PhoneNumber:xxx },
+  success: true,
+  info: ''
+}
+```
+
 ## 提交 API
 
 ### *提交申请 PUT /code/submitCode
@@ -201,6 +215,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3O
 }
 ```
 
+### *用户查看所有提交数量 GET /code/viewSubmissionNumber
+
 ### *Admin查看所有提交 GET /code/allSubmission?startIndex={index}
 
 (需要是Admin) 返回 index [index, index + 10] 从0开始
@@ -238,6 +254,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3O
 }
 ```
 
+### *Admin查看所有提交数量 GET /code/allSubmissionNumber
+
 ### *Admin审核提交 PUT /code/verifySubmission
 
 (需要是Admin) 请求：
@@ -250,3 +268,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3O
 ```
 
 响应：无
+
+## Admin API
+
+### *Admin查看所有注册用户状态 GET /admin/allStatus?startIndex={index}
+
+### *Admin查询所有注册用户数量 GET /admin/allUserNumber
+
