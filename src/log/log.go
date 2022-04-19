@@ -1,8 +1,8 @@
 package log
 
 import (
-	"antiNCP/config"
 	"fmt"
+	"github.com/FlyInThesky10/antiNCP-backend/config"
 	rotateLogs "github.com/lestrrat/go-file-rotatelogs"
 	"github.com/rifflock/lfshook"
 	"github.com/sirupsen/logrus"

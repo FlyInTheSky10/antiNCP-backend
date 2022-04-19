@@ -1,8 +1,8 @@
 package util
 
 import (
-	"antiNCP/config"
-	"antiNCP/constant"
+	"github.com/FlyInThesky10/antiNCP-backend/config"
+	"github.com/FlyInThesky10/antiNCP-backend/constant"
 	"github.com/golang-jwt/jwt"
 	"github.com/labstack/echo/v4"
 	"time"

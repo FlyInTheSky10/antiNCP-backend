@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"antiNCP/config"
-	"antiNCP/util"
+	"github.com/FlyInThesky10/antiNCP-backend/config"
+	"github.com/FlyInThesky10/antiNCP-backend/util"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"antiNCP/config"
-	. "antiNCP/log"
-	middlewareFly "antiNCP/middleware"
-	"antiNCP/router"
+	"github.com/FlyInThesky10/antiNCP-backend/config"
+	. "github.com/FlyInThesky10/antiNCP-backend/log"
+	middlewareFly "github.com/FlyInThesky10/antiNCP-backend/middleware"
+	"github.com/FlyInThesky10/antiNCP-backend/router"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )

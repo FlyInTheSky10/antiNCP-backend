@@ -1,15 +1,15 @@
 package controller
 
 import (
-	"antiNCP/controller/param"
-	"antiNCP/model"
-	"antiNCP/util"
-	"antiNCP/util/flyErr"
-	"antiNCP/util/response"
 	"crypto/rand"
 	"crypto/rsa"
 	"crypto/x509"
 	"encoding/pem"
+	"github.com/FlyInThesky10/antiNCP-backend/controller/param"
+	"github.com/FlyInThesky10/antiNCP-backend/model"
+	"github.com/FlyInThesky10/antiNCP-backend/util"
+	"github.com/FlyInThesky10/antiNCP-backend/util/flyErr"
+	"github.com/FlyInThesky10/antiNCP-backend/util/response"
 	"github.com/labstack/echo/v4"
 	"golang.org/x/crypto/bcrypt"
 	"net/http"

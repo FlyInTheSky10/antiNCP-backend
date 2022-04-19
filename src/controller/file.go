@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"antiNCP/util"
-	"antiNCP/util/flyErr"
-	"antiNCP/util/response"
+	"github.com/FlyInThesky10/antiNCP-backend/util"
+	"github.com/FlyInThesky10/antiNCP-backend/util/flyErr"
+	"github.com/FlyInThesky10/antiNCP-backend/util/response"
 	"github.com/labstack/echo/v4"
 	"io"
 	"net/http"

@@ -1,8 +1,8 @@
 package router
 
 import (
-	"antiNCP/controller"
-	"antiNCP/middleware"
+	"github.com/FlyInThesky10/antiNCP-backend/controller"
+	"github.com/FlyInThesky10/antiNCP-backend/middleware"
 	"github.com/labstack/echo/v4"
 )
 

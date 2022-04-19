@@ -1,10 +1,10 @@
 package model
 
 import (
-	"antiNCP/controller/param"
 	"crypto/rsa"
 	"crypto/x509"
 	"fmt"
+	"github.com/FlyInThesky10/antiNCP-backend/controller/param"
 	"github.com/go-redis/redis/v7"
 	"time"
 )

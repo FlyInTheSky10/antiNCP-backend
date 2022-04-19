@@ -1,8 +1,8 @@
 package model
 
 import (
-	"antiNCP/config"
-	. "antiNCP/log"
+	"github.com/FlyInThesky10/antiNCP-backend/config"
+	. "github.com/FlyInThesky10/antiNCP-backend/log"
 	"github.com/go-redis/redis/v7"
 )
 

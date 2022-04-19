@@ -1,9 +1,9 @@
 package model
 
 import (
-	"antiNCP/config"
-	"antiNCP/log"
 	"fmt"
+	"github.com/FlyInThesky10/antiNCP-backend/config"
+	"github.com/FlyInThesky10/antiNCP-backend/log"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 )

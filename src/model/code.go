@@ -1,8 +1,8 @@
 package model
 
 import (
-	"antiNCP/controller/param"
 	"fmt"
+	"github.com/FlyInThesky10/antiNCP-backend/controller/param"
 	"time"
 )
 
